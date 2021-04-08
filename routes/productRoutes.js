@@ -1,13 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const products = require('../data/products');
 const ProductsController = require('../controllers/productController');
 
 // router.get('/', (req, res) => {
 // 	res.json(JSON.stringify(products));
 // });
 
-router.get('/', ProductsController.products_get_all);
+router.get('/', ProductsController.getAllProducts);
 
 // router.get('/:productId', (req, res) => {
 // 	const id = req.params.productId;
@@ -15,6 +14,8 @@ router.get('/', ProductsController.products_get_all);
 // 	res.json(products.find((x) => Number(id) === x.id));
 // });
 
-router.get('/:productId', ProductsController.products_get_product);
+router.get('/:productId', ProductsController.getProduct);
+
+router.post('/', ProductsController.createProduct);
 
 module.exports = router;
