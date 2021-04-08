@@ -1,11 +1,13 @@
 const products = require('../data/products');
 
-exports.products_get_all = (req, res, next) => {
+exports.getAllProducts = (req, res, next) => {
 	res.json(products);
 };
 
-exports.products_get_product = (req, res) => {
+exports.getProduct = (req, res) => {
 	const id = req.params.productId;
 
 	res.json(products.find((x) => Number(id) === x.id));
 };
+
+exports;

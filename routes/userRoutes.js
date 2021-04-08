@@ -4,8 +4,8 @@ const UserController = require('../controllers/UserController');
 
 const router = express.Router();
 
-router.get('/', UserController.users_get_all);
+router.get('/', UserController.getAllUsers);
 
-router.get('/:userId', UserController.users_get_user);
+router.get('/:userId', UserController.getUser);
 
 module.exports = router;

@@ -6,7 +6,7 @@ const ProductsController = require('../controllers/productController');
 // 	res.json(JSON.stringify(products));
 // });
 
-router.get('/', ProductsController.products_get_all);
+router.get('/', ProductsController.getAllProducts);
 
 // router.get('/:productId', (req, res) => {
 // 	const id = req.params.productId;
@@ -14,6 +14,6 @@ router.get('/', ProductsController.products_get_all);
 // 	res.json(products.find((x) => Number(id) === x.id));
 // });
 
-router.get('/:productId', ProductsController.products_get_product);
+router.get('/:productId', ProductsController.getProduct);
 
 module.exports = router;
