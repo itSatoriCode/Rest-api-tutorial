@@ -5,12 +5,16 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon index.js"
+		"start": "nodemon index.js",
+		"products:import": "node config/seeder",
+		"products:destroy": "node config/seeder -d"
 	},
 	"author": "itSatori",
 	"license": "ISC",
 	"dependencies": {
+		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
+		"mongoose": "^5.12.3",
 		"morgan": "^1.10.0"
 	},
 	"devDependencies": {

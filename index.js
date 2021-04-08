@@ -2,11 +2,16 @@ const express = require('express');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 const morgan = require('morgan');
+const dotenv = require('dotenv');
+const connectDB = require('./config/mongoDB');
 
 const app = express();
 
 app.use(express.json());
 app.use(morgan('dev'));
+
+dotenv.config();
+connectDB();
 
 app.get('/', (req, res) => {
 	res.json({
