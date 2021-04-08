@@ -4,7 +4,7 @@ const users = [
 		name: 'Admin User',
 		email: 'admin@admin.com',
 		password: 'password',
-		isAdmin: true,
+		isModerator: true,
 	},
 	{
 		id: 2,
