@@ -10,4 +10,22 @@ exports.getProduct = (req, res) => {
 	res.json(products.find((x) => Number(id) === x.id));
 };
 
-exports;
+exports.createProduct = (req, res) => {
+	const product = {
+		id: products.length,
+		name: req.body.name,
+		description: req.body.description,
+		director: req.body?.director,
+		category: req.body?.category,
+		price: req.body?.price,
+		countInStock: req.body?.countInStock,
+		rating: req.body?.rating,
+	};
+	console.log('ds');
+	products.push(product);
+	console.log('ds');
+
+	res.json({
+		message: 'Product was created',
+	});
+};
