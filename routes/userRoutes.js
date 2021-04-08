@@ -1,17 +1,11 @@
 const express = require('express');
 const users = require('../data/users');
+const UserController = require('../controllers/UserController');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-	console.log(users);
-	res.json(users);
-});
+router.get('/', UserController.users_get_all);
 
-router.get('/:userId', (req, res) => {
-	const id = req.params.userId;
-
-	res.json(users.find((x) => Number(id) === x.id));
-});
+router.get('/:userId', UserController.users_get_user);
 
 module.exports = router;
